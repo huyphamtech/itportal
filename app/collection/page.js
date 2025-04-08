@@ -1,30 +1,23 @@
 import styles from "./styles.module.css";
-
-async function getTickets() {
-  const data = await fetch("http://localhost:4000/tickets");
-  const tickets = await data.json();
-
-  if (!data.ok) {
-    throw new Error("Failed to fetch tickets");
-  }
-  return tickets;
-}
+import Link from "next/link";
+import getTickets from "@/app/databasehandle";
 
 export default async function Collection() {
-  let data;
-  try {
-    data = await getTickets();
-  } catch (error) {
-    return <div className={styles.message}>Failed to load tickets.</div>;
-  }
+  const {id} = await params;
+  const {data, message} = getATicket(id);
+  const tickets = await data.json();
 
   return (
     <div className={styles.page}>
       <h1 className={styles.title}>IT Tickets Dashboard</h1>
-      <ul className={styles.ticketList}>
-        {data.map((item) => (
+      {message && <div className={styles.message}>{message}</div>}
+      {!message && <ul className={styles.ticketList}>
+        {tickets.map((item) => (
           <li key={item.id} className={styles.ticketItem}>
-            <p><strong>ID:</strong> {item.id}</p>
+            <div className={styles.link_box}>
+              <p><strong>ID:</strong> {item.id}</p>
+              <Link href={`/collection/${item.id}`}>More</Link>
+            </div>
             <p><strong>Short Description:</strong> {item.short_description}</p>
             <p><strong>Status:</strong> {item.solve_status}</p>
             <p><strong>Task Catalog:</strong> {item.task_type}</p>
@@ -32,7 +25,7 @@ export default async function Collection() {
             <strong>Full Description:</strong><br /> <div className={styles.full}>{item.full_description}</div>
           </li>
         ))}
-      </ul>
+      </ul>}
     </div>
   );
 }
