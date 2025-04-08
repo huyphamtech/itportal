@@ -1,0 +1,25 @@
+.subnav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1f2937;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: right;
+    font-weight: bold;
+}
+
+.logo {
+    border-radius: 8px;
+    background-color: #BE3D2A;
+    padding: 1rem;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    margin-right: 1rem;
+}

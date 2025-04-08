@@ -7,7 +7,7 @@ export default function Subnav() {
         <div className={styles.profile}>
             <div className={styles.name}>Harry Pham</div>
             <div className={styles.img}>
-                <Image src="/login.png" width={40} height={40} alt="Login Icon"/>
+                <Image src="/login.png" width={40} height={40} alt="Login Icon" />
             </div>
         </div>
     </div>)
