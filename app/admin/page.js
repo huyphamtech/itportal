@@ -1,20 +1,11 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import "@/app/global.css";
+import Link from "next/link";
 import getTickets from "@/app/databasehandle";
+import {deleteTicket, createTicket} from "./action";
 
 export default async function Home() {
-  let total = 0;
-  let completed = 0;
-  let unsolved = 0;
-  const {tickets, message} = await getTickets();
-  if (!message) {
-    total = tickets.length;
-  }
-  
-  tickets.forEach( (item) => {
-    if (item.solve_status == "Completed") completed ++;
-    if (item.solve_status == "Unsolved") unsolved ++;
-  });
+  const { tickets, message } = await getTickets();
 
   return (
     <div className={styles.page}>
@@ -22,18 +13,35 @@ export default async function Home() {
       {!message && <div>
         <div className={styles.banner}>
           <div className={styles.banner_text}>
-            <strong>Manage incidents with IT Portal</strong>
-            <p>Maximize productivity and simplify administration without compromising endpoint management and security.</p>
+            <strong>Admin Center</strong>
+            <p>Create, edit, and delete tickets in one click.</p>
           </div>
-          <div className={styles.banner_img}><Image width={256} height={256} alt="IT Support" src="/banner_img.png" /></div>
         </div>
-        <div className={styles.banner_status}>
-          <strong>Status</strong>
-          <div className={styles.summary}>
-            <div className={styles.total}>Total: {total}</div>
-            <div className={styles.completed}>Completed: {completed}</div>
-            <div className={styles.unsolved}>Unsolved: {unsolved}</div>
-          </div>
+        <div className={styles.ticket_table_box}>
+          <table className={styles.ticket_table}>
+            <thead className={styles.thead}>
+              <tr><th>ID</th><th>Short Description</th><th>Solve Status</th><th>Task Type</th><th>Date</th><th>Edit</th><th>Delete</th></tr>
+            </thead>
+            <tbody className={styles.tbody}>
+              {
+                tickets.map(ticket => (
+                  <tr key={ticket.id}>
+                    <td>{ticket.id}</td>
+                    <td>{ticket.short_description}</td>
+                    <td>{ticket.solve_status}</td>
+                    <td>{ticket.task_type}</td>
+                    <td>{ticket.date}</td>
+                    <td><Link href={`/admin/edit/${ticket.id}`} className={`${styles.btn_edit} ${styles.btn}`}>Edit</Link></td>
+                    <td>
+                      <form action={deleteTicket.bind(null, ticket.id)}>
+                        <input type="submit" value="Delete" className={`${styles.btn} ${styles.btn_delete}`}/>
+                      </form>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
         </div>
       </div>}
     </div>

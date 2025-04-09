@@ -1,0 +1,28 @@
+.page {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.message {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    background: #F7374F;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.link {
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    background-color: #A62C2C;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}

@@ -1,5 +1,6 @@
 .banner {
-    background: #AFDDFF;
+    background: #213555;
+    color: white;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -18,42 +19,6 @@
     font-size: 1rem;
 }
 
-.banner_status {
-    background: #E1EEBC;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 1.5rem 1rem 1.5rem;
-}
-
-.summary {
-    display: flex;
-    justify-content: space-evenly;
-
-}
-
-.total {
-    background: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-.completed {
-    background: #1DCD9F;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-.unsolved {
-    background: #F7374F;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
 .message {
     padding: 1.5rem;
     font-size: 1.5rem;
@@ -64,3 +29,43 @@
     text-align: center;
 }
 
+.ticket_table_box {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: #F5EFE7;
+}
+
+.ticket_table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden;
+    text-align: left;
+}
+
+.thead {
+    background-color: #1e88e5;
+    color: white;
+}
+
+.btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+}
+
+.btn_edit {
+    background-color: #EA7300;
+}
+
+.btn_delete {
+    border-width: 0;
+    background-color: #A62C2C;
+    cursor: pointer;
+}

@@ -1,12 +1,12 @@
 {
-    "tickets": [
-        {
-            "id": "1",
-            "short_description": "first ticket",
-            "full_description": "first ticket ... ... ...",
-            "solve_status": "Completed",
-            "task_type": "Hardware",
-            "date": "04-04-2025"
-        }
-    ]
+  "tickets": [
+    {
+      "id": "1",
+      "short_description": "My first ticket",
+      "full_description": "Ticket detail",
+      "solve_status": "Completed",
+      "task_type": "Hardware",
+      "date": "04-04-2025"
+    }
+  ]
 }
