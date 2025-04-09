@@ -26,13 +26,17 @@
     text-align: center;
 }
 
-.full {
-    margin: 1rem;
-    background: #AFDDFF;
+.first_line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.id {
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.75rem;
+    background-color: #169976;
+    color: #F6F8D5;
 }
 
 .link_box {
@@ -43,8 +47,29 @@
 .link_box a {
     text-decoration: none;
     color: white;
-    background-color: #F7374F;
+    background-color: #000000;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.second_line {
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.third_line {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.full {
+    margin: 1rem;
+    background: #1DCD9F;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.75rem;
 }

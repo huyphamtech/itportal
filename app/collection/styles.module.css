@@ -32,15 +32,6 @@
     text-align: center;
 }
 
-.full {
-    margin: 1rem;
-    background: #AFDDFF;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.75rem;
-}
-
 .link_box {
     display: flex;
     justify-content: space-between;
@@ -49,8 +40,31 @@
 .link_box a {
     text-decoration: none;
     color: white;
-    background-color: #F7374F;
+    background-color: #F4CE14;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    
+}
+
+.id {
+    display: flex;
+    align-items: center;
+}
+
+.number {
+    margin-left: 1rem;
+    background-color: #45474B;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    color: #F6F8D5;
+}
+
+.description {
+    background-color: #379777;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 1rem;
 }

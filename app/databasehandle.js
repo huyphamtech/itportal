@@ -3,17 +3,8 @@ export default async function getTickets() {
     const message = "";
     if (!data.ok) {
         message = "Failed to fetch tickets";
+        return {ticket: null, message};
     }
     const tickets = await data.json();
-    return tickets, message;
-}
-
-export async function getATicket(id) {
-    const data = await fetch(`http://localhost:4000/tickets/${id}`);
-    const message = "";
-    if (!data.ok) {
-        message = `Failed to fetch ticket: ${id}`;
-    }
-    const ticket = await data.json();
-    return ticket, message;
+    return {tickets, message};
 }

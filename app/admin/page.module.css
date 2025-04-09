@@ -1,0 +1,66 @@
+.banner {
+    background: #AFDDFF;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+.banner_text {
+    font-size: 2rem;
+    padding: 1.5rem 2rem 1rem 1rem;
+}
+
+.banner_text p {
+    font-size: 1rem;
+}
+
+.banner_status {
+    background: #E1EEBC;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.total {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.completed {
+    background: #1DCD9F;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.unsolved {
+    background: #F7374F;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.message {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    background: #F7374F;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+

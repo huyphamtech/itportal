@@ -3,10 +3,8 @@ import Link from "next/link";
 import getTickets from "@/app/databasehandle";
 
 export default async function Collection() {
-  const {id} = await params;
-  const {data, message} = getATicket(id);
-  const tickets = await data.json();
-
+  const {tickets, message} = await getTickets();
+  
   return (
     <div className={styles.page}>
       <h1 className={styles.title}>IT Tickets Dashboard</h1>
@@ -15,14 +13,10 @@ export default async function Collection() {
         {tickets.map((item) => (
           <li key={item.id} className={styles.ticketItem}>
             <div className={styles.link_box}>
-              <p><strong>ID:</strong> {item.id}</p>
+              <div className={styles.id}><strong>#ID:</strong><div className={styles.number}>{item.id}</div></div>
               <Link href={`/collection/${item.id}`}>More</Link>
             </div>
-            <p><strong>Short Description:</strong> {item.short_description}</p>
-            <p><strong>Status:</strong> {item.solve_status}</p>
-            <p><strong>Task Catalog:</strong> {item.task_type}</p>
-            <p><strong>Date:</strong> {item.date}</p>
-            <strong>Full Description:</strong><br /> <div className={styles.full}>{item.full_description}</div>
+            <div className={styles.description}><strong>Short Description:</strong> {item.short_description}</div>
           </li>
         ))}
       </ul>}
