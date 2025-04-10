@@ -1,9 +1,9 @@
 import styles from "./styles.module.css";
 import Link from "next/link";
 
-export default async function Collection({ params }) {
+export default async function Collection({params}) {
   let message = "";
-  const { id } = await params;
+  let {id} = await params;
   const data = await fetch(`http://localhost:4000/tickets/${id}`);
 
   if (!data.ok) {
@@ -28,7 +28,7 @@ export default async function Collection({ params }) {
           <div><strong>Date:</strong> {ticket.date}</div>
         </div>
         <div className={styles.last_line}>
-          <strong>Full Description:</strong><br />
+          <strong>Full Description:</strong>
           <div className={styles.full}>{ticket.full_description}</div>
         </div>
       </div>}
