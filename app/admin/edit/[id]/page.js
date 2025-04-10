@@ -1,11 +1,14 @@
 'use client'
 import styles from "./styles.module.css";
 import Link from "next/link";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, use } from 'react';
 import { editTicket } from "@/app/admin/action";
 
 export default function Collection({ params }) {
+    const id = use(params);
+    const [loading, setLoading] = useState(true);
     //get current data from api
+    
     const [ticket, setTicket] = useState({
         id: "",
         short_description: "",
@@ -17,7 +20,8 @@ export default function Collection({ params }) {
     let message = "";
     useEffect(() => {
         const fetchapi = async () => {
-            const { id } = await params;
+            if (!id) return;
+            setLoading(true);
             const data = await fetch(`http://localhost:4000/tickets/${id}`);
             if (!data.ok) {
                 message = `Failed to load ticket #ID: ${id}`;
@@ -28,9 +32,10 @@ export default function Collection({ params }) {
                 );
             }
             setTicket(await data.json());
+            setLoading(false);
         }
         fetchapi()
-    })
+    },[id])
 
 
     //onChange

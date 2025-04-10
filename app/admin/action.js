@@ -50,3 +50,6 @@ export async function createTicket(formData) {
 
     redirect('/admin');
 }
+
+export async function editTicket() {
+}
