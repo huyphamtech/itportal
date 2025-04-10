@@ -1,6 +1,7 @@
 'use server'
 
 import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 export async function deleteTicket(deleteID) {
     await fetch(`http://localhost:4000/tickets/${deleteID}`, {
@@ -12,10 +13,17 @@ export async function deleteTicket(deleteID) {
 };
 
 export async function createTicket(formData) {
-
+    const data = await fetch("http://localhost:4000/tickets");
+    const tickets = await data.json();
+    let id  = "1";
+    if (tickets.length > 0) {
+        id = Math.max(...tickets.map (item => item.id)) + 1;
+    }
+    
     const rawFormData = {
-        ticketid: formData.get('ticketid'),
+        ticketid: `${id}`,
         short_description: formData.get('short_description'),
+        full_description: formData.get('full_description'),
         solve_status: formData.get('solve_status'),
         task_type: formData.get('task_type'),
         date: formData.get('date'),
@@ -29,6 +37,7 @@ export async function createTicket(formData) {
         body: JSON.stringify({
             id: rawFormData.ticketid,
             short_description: rawFormData.short_description,
+            full_description: rawFormData.full_description,
             solve_status: rawFormData.solve_status,
             task_type: rawFormData.task_type,
             date: rawFormData.date
@@ -36,5 +45,8 @@ export async function createTicket(formData) {
     });
 
     revalidatePath('/collection');
+    revalidatePath(`/collection/${id}`);
     revalidatePath('/admin');
+
+    redirect('/admin');
 }

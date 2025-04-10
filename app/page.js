@@ -13,7 +13,7 @@ export default async function Home() {
   
   tickets.forEach( (item) => {
     if (item.solve_status == "Completed") completed ++;
-    if (item.solve_status == "Unsolved") unsolved ++;
+    else unsolved ++;
   });
 
   return (

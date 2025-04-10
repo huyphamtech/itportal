@@ -1,0 +1,75 @@
+.page {
+    padding: 1.5rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.ticketItem {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.75rem;
+}
+
+.message {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    background: #F7374F;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.first_line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.id {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #169976;
+    color: #F6F8D5;
+}
+
+.link_box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link_box a {
+    text-decoration: none;
+    color: white;
+    background-color: #000000;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.second_line {
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.third_line {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.full {
+    margin: 1rem;
+    background: #1DCD9F;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.75rem;
+}

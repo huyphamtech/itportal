@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import "@/app/global.css";
 import Link from "next/link";
 import getTickets from "@/app/databasehandle";
-import {deleteTicket, createTicket} from "./action";
+import { deleteTicket } from "./action";
 
 export default async function Home() {
   const { tickets, message } = await getTickets();
@@ -16,6 +16,9 @@ export default async function Home() {
             <strong>Admin Center</strong>
             <p>Create, edit, and delete tickets in one click.</p>
           </div>
+        </div>
+        <div className={styles.link}>
+          <Link href="/admin/create">Create New Ticket</Link>
         </div>
         <div className={styles.ticket_table_box}>
           <table className={styles.ticket_table}>
@@ -34,7 +37,7 @@ export default async function Home() {
                     <td><Link href={`/admin/edit/${ticket.id}`} className={`${styles.btn_edit} ${styles.btn}`}>Edit</Link></td>
                     <td>
                       <form action={deleteTicket.bind(null, ticket.id)}>
-                        <input type="submit" value="Delete" className={`${styles.btn} ${styles.btn_delete}`}/>
+                        <input type="submit" value="Delete" className={`${styles.btn} ${styles.btn_delete}`} />
                       </form>
                     </td>
                   </tr>

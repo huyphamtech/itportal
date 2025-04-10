@@ -2,8 +2,8 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 
 export default async function Collection({ params }) {
-  const { id } = await params;
   let message = "";
+  const { id } = await params;
   const data = await fetch(`http://localhost:4000/tickets/${id}`);
 
   if (!data.ok) {
