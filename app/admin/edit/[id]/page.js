@@ -116,29 +116,29 @@ export default function Collection() {
                         <input type="text" name="short_description" id="short_description" value={ticket.short_description} className={styles.text} onChange={handleChange} />
                     </div>
                     <div className={styles.third_line}>
-                        <div>
+                        <div className={styles.status}>
                             <label className={styles.label}><strong>Status</strong></label>
                             <div className={styles.radio_group}>
-                                <label><input type="radio" name="solve_status" value="complete" onChange={handleChange} />Complete</label>
-                                <label><input type="radio" name="solve_status" value="incomplete" onChange={handleChange} />Incomplete</label>
+                                <label><input type="radio" name="solve_status" value="complete" onChange={handleChange} checked={ticket.solve_status === 'complete'}/>Complete</label>
+                                <label><input type="radio" name="solve_status" value="incomplete" onChange={handleChange} checked={ticket.solve_status === 'incomplete'}/>Incomplete</label>
                             </div>
                         </div>
-                        <div>
+                        <div className={styles.task_catalog}>
                             <label htmlFor="task_type" className={styles.label}><strong>Task Catalog</strong></label>
-                            <select id="task_type" name="task_type" className={styles.select} onChange={handleChange}>
+                            <select id="task_type" name="task_type" className={styles.select} onChange={handleChange} value={ticket.task_type}>
                                 <option value="">-- Select --</option>
                                 <option value="hardware">Hardware</option>
                                 <option value="network">Network</option>
                                 <option value="account">Account</option>
                             </select>
                         </div>
-                        <div>
-                            <label htmlFor="date" className={styles.label}><strong>Date:</strong></label>&nbsp;
-                            <input type="date" name="date" id="date" onChange={handleChange}/>
+                        <div className={styles.date}>
+                            <label htmlFor="date" className={styles.label}><strong>Date:</strong></label>
+                            <input type="date" name="date" id="date" onChange={handleChange} value={ticket.date}/>
                         </div>
                     </div>
                     <div className={styles.last_line}>
-                        <label htmlFor="full_description" className={styles.label}>Full Description:</label>&nbsp;
+                        <label htmlFor="full_description" className={styles.label}><strong>Full Description:</strong></label>&nbsp;
                         <textarea name="full_description" id="full_description" onChange={handleChange} value={ticket.full_description}/>
                     </div>
                     <div><input type="submit" value="Make a change" className={styles.btn} /></div>

@@ -10,10 +10,10 @@
     {
       "id": "2",
       "short_description": "second ticket",
-      "full_description": "bla bla bla ... \nbla bla bla ... \nbla bla bla ... \nbla bla bla ... \nbla bla bla ... \nbla bla bla ... \nbla bla bla ... ",
-      "solve_status": "complete",
+      "full_description": "bla bla bla bla bla\r\nbla bla bla bla bla\r\nbla bla bla bla bla\r\nbla bla bla bla bla\r\nbla bla bla bla bla\r\nbla bla bla bla bla",
+      "solve_status": "incomplete",
       "task_type": "hardware",
-      "date": "2025-04-10"
+      "date": "2025-04-11"
     }
   ]
 }
