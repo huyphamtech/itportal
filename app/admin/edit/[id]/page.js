@@ -46,46 +46,54 @@ export default function Collection() {
     };
 
     function onSubmit(e) {
+        let errors = 0;
         setMessage_List([]);
         e.preventDefault();
         //validate short description
+        
         if (!ticket.short_description.trim()) {
             setMessage_List((prev) => ([...prev, " Short Description must not be empty."]));
+            errors++;
         }
         if (ticket.short_description.length < 3 || ticket.short_description.length >= 50) {
             setMessage_List((prev) => ([...prev, "Short Description must be between 3 and 50 characters."]));
+            errors++;
         }
         if (!/^[a-zA-Z0-9\s]+$/.test(ticket.short_description)) {
             setMessage_List((prev) => ([...prev, "Short description cannot contain special characters."]));
+            errors++;
         }
 
         //validate status
         if (!ticket.solve_status) {
             setMessage_List((prev) => ([...prev, "Status Must Be Selected."]));
+            errors++;
         }
 
         //validate task catalog
         if (!ticket.task_type) {
             setMessage_List((prev) => ([...prev, "You Must Select The Task Catalog."]));
+            errors++;
         }
 
         //validate task catalog
         if (!ticket.date) {
             setMessage_List((prev) => ([...prev, "You Must Select The Date."]));
+            errors++;
         }
 
         //validate full description
         if (!ticket.full_description.trim()) {
             setMessage_List((prev) => ([...prev, "Full Description must not be empty."]));
+            errors++;
         }
         if (ticket.full_description.length < 100 || ticket.full_description.length >= 1000) {
             setMessage_List((prev) => ([...prev, "Full Description must be between 100 and 1000 characters."]));
+            errors++;
         }
 
-        if (!message_list) {
-            //console.log(formData);
-            console.log("OK");
-            //editTicket(e.formData);
+        if (errors == 0) {
+            editTicket(ticket);
         }
     }
 
@@ -131,7 +139,7 @@ export default function Collection() {
                     </div>
                     <div className={styles.last_line}>
                         <label htmlFor="full_description" className={styles.label}>Full Description:</label>&nbsp;
-                        <textarea name="full_description" id="full_description" onChange={handleChange} />
+                        <textarea name="full_description" id="full_description" onChange={handleChange} value={ticket.full_description}/>
                     </div>
                     <div><input type="submit" value="Make a change" className={styles.btn} /></div>
                 </form>

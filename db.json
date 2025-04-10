@@ -9,11 +9,11 @@
     },
     {
       "id": "2",
-      "short_description": "1aaa",
-      "full_description": "",
-      "solve_status": null,
-      "task_type": "",
-      "date": ""
+      "short_description": "second ticket",
+      "full_description": "bla bla bla ... \nbla bla bla ... \nbla bla bla ... \nbla bla bla ... \nbla bla bla ... \nbla bla bla ... \nbla bla bla ... ",
+      "solve_status": "complete",
+      "task_type": "hardware",
+      "date": "2025-04-10"
     }
   ]
 }

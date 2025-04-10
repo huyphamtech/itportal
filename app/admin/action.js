@@ -51,30 +51,20 @@ export async function createTicket(formData) {
     redirect('/admin');
 }
 
-export async function editTicket(formData) {
-    /*const rawFormData = {
-        ticketid: formData.get('ticketid'),
-        short_description: formData.get('short_description'),
-        full_description: formData.get('full_description'),
-        solve_status: formData.get('solve_status'),
-        task_type: formData.get('task_type'),
-        date: formData.get('date'),
-    }
-    
-    console.log(ticket);
+export async function editTicket(ticket) {
 
-    await fetch(`http://localhost:4000/tickets/${rawFormData.id}`, {
+    await fetch(`http://localhost:4000/tickets/${ticket.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            id: rawFormData.id,
-            short_description: rawFormData.short_description,
-            full_description: rawFormData.full_description,
-            solve_status: rawFormData.solve_status,
-            task_type: rawFormData.task_type,
-            date: rawFormData.date
+            id: ticket.id,
+            short_description: ticket.short_description,
+            full_description: ticket.full_description,
+            solve_status: ticket.solve_status,
+            task_type: ticket.task_type,
+            date: ticket.date
         }),
     });
     revalidatePath('/collection');
@@ -82,5 +72,5 @@ export async function editTicket(formData) {
     revalidatePath('/admin');
     revalidatePath(`/admin/edit/${ticket.id}`);
 
-    redirect('/admin');*/
+    redirect('/admin');
 }
