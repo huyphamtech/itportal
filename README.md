@@ -1,7 +1,13 @@
 This is a IT Ticket Protal Project 
 ## Getting Started
 
-First, run the Json Server:
+First, run the installation:
+
+```bash
+npm i
+```
+
+Second, run the Json Server:
 
 ```bash
 npm run server-json
